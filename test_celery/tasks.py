@@ -5,8 +5,16 @@ import time
 
 @app.task
 def longtime_add(x, y):
-    print 'long time task begins'
+    print('long time task begins')
     # sleep 5 seconds
     time.sleep(5)
-    print 'long time task finished'
+    print('long time task finished')
+    return x + y
+
+@app.task
+def shorttime_add(x, y):
+    print('short time task begins')
+    # sleep 5 seconds
+    time.sleep(1)
+    print('short time task finished')
     return x + y
